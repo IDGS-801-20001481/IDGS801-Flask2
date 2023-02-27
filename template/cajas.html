@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<br>
+<h2>Duplicacion de Campos</h2>
+<div>
+    <div class="container">
+        <br>
+        {% from "_macros.html" import render_field %}
+        <form action="" method="post" novalidate>
+            <div style="background: #F7DC6F; border: 2px solid #F1C40F; border-radius: 5px; padding: 5px;">
+                <br>
+                <div class="row align-items-start">
+                    <div class="col">
+                        {{render_field(form.n_cajas)}}
+                    </div>
+                    <div class="col">
+                        <input type="submit" value="Enviar" style="background: #F1C40F;">
+                    </div>
+                </div>
+                <br>
+            </div>
+        </form>
+        <br>
+    </div>
+</div>
+{%endblock%}

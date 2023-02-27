@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<br>
+<h2 style="text-align: center;">Pagina de Numeros</h2>
+<div class="container text-center">
+    {% from "_macros.html" import render_field %}
+    <form action="" method="post" novalidate>
+        <div style="background: #F7DC6F; border: 2px solid #F1C40F; border-radius: 5px; padding: 5px;">
+            <div class="row align-items-start">
+                {% for i in {{ n_cajas }} -%}
+                    <div class="col-4">
+                        {{render_field(form.numeros)}}
+                    </div>
+                {% endfor -%}
+            </div>
+            <br>
+            <div style="width: 50%;">
+                <input type="submit" value="Enviar Informacion" style="background: #F1C40F;">
+            </div>
+            <br>
+        </div>
+    </form>
+</div>
+<br>
+
+{% endblock %}

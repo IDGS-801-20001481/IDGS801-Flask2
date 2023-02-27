@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div>
+    <br>
+    <h2 style="text-align: center;">Pagina de Alumnos</h2>
+    <div class="container text-center">
+        {% from "_macros.html" import render_field %}
+        <form action="" method="post" novalidate>
+            <br>
+            <div class="row align-items-start">
+                <div class="col">
+                    {{render_field(form.matricula)}}
+                </div>
+                <div class="col">
+                    {{render_field(form.nombre)}}
+                </div>
+                <div class="col">
+                    {{render_field(form.apaterno)}}
+                </div>
+                <div class="col">
+                    {{render_field(form.amaterno)}}
+                </div>
+                <div class="col">
+                    {{render_field(form.email)}}
+                </div>
+            </div>
+            <br>
+            <input type="submit" value="Registrar" style="background: #212F3D; color: #ECF0F1">
+        </form>
+    </div>
+    <br>
+    <div class="container"></div>
+        <div class="row align-items-start">
+            <div class="col">
+                <h3>Matricula: {{ mat }}</h3>
+            </div>
+            <div class="col">
+                <h3>Nombre: {{ nom }}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
