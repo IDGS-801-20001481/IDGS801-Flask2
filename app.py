@@ -22,6 +22,19 @@ def alumnos():
         nom = reg_alummos.nombre.data
     return render_template('alumnos.html', form = reg_alummos, mat = mat, nom = nom)
 
+@app.route('/Cookie', methods=['GET'])
+def cookie():
+    reg_user = forms.LoginForm(request.form)
+    response = make_response(render_template('cookie.html',form = reg_user))
+    if request.method == 'POST' and reg_user.validate():
+        user = reg_user.username.data
+        pasw = reg_user.password.data
+        datos = user="@"+pasw
+        succes_message = 'Bienvenido()'.format(user)
+        flash(succes_message)
+        response.set_cookie('datos_user',datos)
+    return response
+
 @app.route('/Cajas', methods=['GET', 'POST'])
 def duplica_cajas(): 
     reg_cajas = cajas.CajasForm(request.form)
